@@ -1,19 +1,8 @@
-
-
-
-
-
-
-
 #!/usr/bin/env python3
 """
-sha256_collector.py
-
-- Verilen raw.githubusercontent.com linklerinden SHA256 anahtarlarını çıkarır.
-- Yalnızca tekil SHA256'leri tekil_sha256.txt'ye yazar.
-- 5 dakikada bir tekrarlar.
+sha256Bot.py
+GitHub Actions için sadeleştirilmiş sürüm.
 """
-
 import re
 import time
 import requests
@@ -143,15 +132,12 @@ OUTPUT_UNIQUE = "tekil_sha256.txt"
 REQUEST_TIMEOUT = 20
 SLEEP_BETWEEN = 0.5
 USER_AGENT = "Mozilla/5.0 (compatible; sha256-collector/1.0)"
-
-# SHA256 regex: 64 hex characters
 SHA256_RE = re.compile(r'\b[a-fA-F0-9]{64}\b')
 
 session = requests.Session()
 session.headers.update({"User-Agent": USER_AGENT})
 
-
-def fetch_url_text(url: str) -> str | None:
+def fetch_url_text(url):
     try:
         r = session.get(url, timeout=REQUEST_TIMEOUT)
         r.raise_for_status()
@@ -160,47 +146,25 @@ def fetch_url_text(url: str) -> str | None:
         print(f"[!] İndirme hatası: {url} -> {e}")
         return None
 
+def extract_sha256(text):
+    return set(m.lower() for m in SHA256_RE.findall(text or ""))
 
-def extract_sha256(text: str) -> set:
-    if not text:
-        return set()
-    return set(m.lower() for m in SHA256_RE.findall(text))
-
-
-def collect_and_save_unique(urls: list, out_file: str):
-    # URL listesinde tekrar varsa kaldır (aynı raw URL iki kere olursa gereksiz istek atılmaz)
-    seen_urls = []
-    for u in urls:
-        if u not in seen_urls:
-            seen_urls.append(u)
-
+def collect_and_save_unique(urls, out_file):
+    seen = set()
     all_hashes = set()
-    for raw_url in tqdm(seen_urls, desc="Kaynaklar"):
-        text = fetch_url_text(raw_url)
+    for u in tqdm(urls, desc="Kaynaklar"):
+        if u in seen:
+            continue
+        seen.add(u)
+        text = fetch_url_text(u)
         hs = extract_sha256(text)
-        print(f"[+] {raw_url} -> {len(hs)} SHA256 bulundu")
+        print(f"[+] {u} -> {len(hs)} SHA256 bulundu")
         all_hashes.update(hs)
         time.sleep(SLEEP_BETWEEN)
-
     with open(out_file, "w", encoding="utf-8") as f:
         for h in sorted(all_hashes):
             f.write(h + "\n")
     print(f"[+] Tekil SHA256 kaydedildi: {out_file} ({len(all_hashes)})")
 
-
-def main_loop():
-    print("[*] SHA256 toplama başlatıldı...")
-    while True:
-        try:
-            collect_and_save_unique(URLS, OUTPUT_UNIQUE)
-        except KeyboardInterrupt:
-            print("Çalışma durduruldu (CTRL+C).")
-            break
-        except Exception as e:
-            print(f"[!] Beklenmeyen hata: {e}")
-        # 5 dakika bekle
-        time.sleep(300)
-
-
 if __name__ == "__main__":
-    main_loop()
+    collect_and_save_unique(URLS, OUTPUT_UNIQUE)

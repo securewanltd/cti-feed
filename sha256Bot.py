@@ -128,7 +128,7 @@ URLS = [
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/spalax/samples.sha256"
 
 ]
-OUTPUT_UNIQUE = "siem-black-list.txt"
+OUTPUT_UNIQUE = "malware-sha256.txt"
 REQUEST_TIMEOUT = 20
 SLEEP_BETWEEN = 0.5
 USER_AGENT = "Mozilla/5.0 (compatible; sha256-collector/1.0)"
@@ -168,4 +168,5 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 

@@ -32,7 +32,7 @@ jobs:
       - name: Run Python scripts
         run: python update_blacklist.py
       - name: Run Python scripts
-        run: python python sha256Bot.py
+        run: python sha256Bot.py
 
         
 

@@ -30,9 +30,10 @@ jobs:
 
     # Her iki script'i sırayla çalıştır
       - name: Run Python scripts
-        run: |
-          python update_blacklist.py
-          python sha256Bot.py
+        run: python update_blacklist.py
+      - name: Run Python scripts
+        run: python python sha256Bot.py
+
         
 
       # Değişiklikleri commit ve push et (pull ile rebase eklenmiş)

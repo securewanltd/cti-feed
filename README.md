@@ -1,6 +1,6 @@
 # **CENTRAL THREAT INTELLIGENCE / EXTERNAL DYNAMIC LISTS**
 
-This list contains malicious IP addresses. IP addresses are collected from various proprietary sources and updated daily. We offer you several lists. Here's a description of each.
+This list contains malicious IP addresses. IP addresses are collected from various proprietary sources and updated hourly. We offer you several lists. Here's a description of each.
 
 * **https://raw.githubusercontent.com/securewanltd/cti-feed/refs/heads/main/black-list.txt** = It is a general Black List.
 * **https://raw.githubusercontent.com/securewanltd/cti-feed/refs/heads/main/black-list-level1.txt** = This is the list we've compiled, stripped of duplicate IP addresses. This is where the general list comes from.

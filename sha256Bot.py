@@ -125,7 +125,8 @@ URLS = [
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/scarcruft/samples.sha256",
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/sednit/samples.sha256",
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/signsight/samples.sha256",
-    "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/spalax/samples.sha256"
+    "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/spalax/samples.sha256",
+    "https://bazaar.abuse.ch/export/txt/sha256/recent/"
 
 ]
 OUTPUT_UNIQUE = "malware-sha256.txt"
@@ -168,5 +169,6 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 
 

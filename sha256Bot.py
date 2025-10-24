@@ -128,6 +128,13 @@ URLS = [
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/spalax/samples.sha256",
     "https://bazaar.abuse.ch/export/txt/sha256/recent/",
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/A-Technical-Study-of-Malwares-Using-Turkish-Bank-Names-for-Phishing-and-Data-Theft/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/APT-Blind-Eagles-Malware-Arsenal-Technical-Analysis-of-the-New-Attack-Chain/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/APT-SideCopy-Targeting-Indian-Government-Entities/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/APT41's-Attack-Chain-Exe-LolBins-Leads-to-Powershell-Backdoor-with-Telegram-C2/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Argentina-Police-Targeted-MALDOC-Analysis-with-PowerShell-Backdoor-Abuses-Ngrok/IOC.txt",
+    
+    
+    
 
 ]
 OUTPUT_UNIQUE = "malware-sha256.txt"
@@ -170,6 +177,7 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 
 
 

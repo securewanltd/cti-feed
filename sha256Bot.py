@@ -132,6 +132,58 @@ URLS = [
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/APT-SideCopy-Targeting-Indian-Government-Entities/IOC.txt",
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/APT41's-Attack-Chain-Exe-LolBins-Leads-to-Powershell-Backdoor-with-Telegram-C2/IOC.txt",
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Argentina-Police-Targeted-MALDOC-Analysis-with-PowerShell-Backdoor-Abuses-Ngrok/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Chinotto-Backdoor-Technical-Analysis-of-the-APT-Reapers-Powerful/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/ConnectWise/IOC%20List/Sha256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Cyber-Threat-Report%3A-Analyzing-Ransomware-and-APT-Attacks-Targeting-T%C3%BCrkiye%20/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Cybergun-Technical-Analysis-of-the-Armageddon's-Infostealer/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/DuneQuixote/DuneQuixote%20Droppers(CR4T))",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/FakeCaptcha/IOC%20List/sha256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/From-Slides-to-Threats%20Transparent-Tribes-New-Attack-on-Indian-Government-Entities-Using-Malicious-PPT/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/GhostLocker-Ransomware-Analysis-Report/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/June's-Cyber-Battleground%3A-Decoding-Ransomware-and-APT-Attacks-in-Europe/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Matanbuchus%203.0/IOC%20List/Sha256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Navigating-the-Digital-Frontier-Cyber-Threats-in-the-Israeli-Palestinian-War/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/NestJS-Stealer-Unraveling-the-Inner-Workings-of-a-New-Cybersecurity-Menace/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Noname057(1In-Depth-Analysis-on-The-Roles-of-Threat-Actors-and-Attacks-In-The-Ukraine-Russia-War/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Planet-Stealer-Malware-Analysis-Report/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Pulsar%20RAT/IOCs/sha256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Pythons-Dark-Side-When-Crafting-a-Wallet-Stealer-Becomes-Disturbingly-Effortless/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/RAT-Goes-Phishing-Dissecting-the-Stealthy-Techniques-of-REM-Phishing-RAT/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Ransomhub/Betruger/IOC/SHA256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Reverse-Engineering-RokRAT-A-Closer-Look-at-APT37's-Onedrive-Based-Attack-Vector/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Riddle-Unveiled-New-Evasive-Stealer-Malware-from-the-Underground/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/RisePro%20Stealer%20IOC/RisePro_IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Serpent-Stealer-Unmasked-Threat-Analysis-and-Countermeasures/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Solving%20the%20Puzzle%20Reversing%20the%20New%20Stealer%20Jigsaw/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Stealing-in-Stealth-Investigating-a-Python-based-Evasive-Malware-Exela/IOCS.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Technical-Analysis-of-RDPCredentialStealer%3A-Uncovering-Malware-Targeting-RDP-Credentials-with-API-Hooking/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Threat-Analysis%3A-SharpPanda-APT's-Attack-Chain-Targeting-G20-Nations/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Unraveling%20the%20Complex%20Infection%20Chain%20Analysis%20of%20the%20SideCopy%20APTs%20Attack/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Unraveling-the-Layers-Analysis-of-Kimsukys-Multi-Staged-Cyberattack/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Zaraza-Bot-The-New-Russian-Credential-Stealer/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Anatomy-of-a-Sidecopy-Attack-From-RAR-Exploits-to-AllaKore-RAT/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Konni-APT-Chronicle-Tracing-Their-Intelligence-Driven-Attack-Chain/IOCs.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Rise-of-Dark-Power-A-Close-Look-at-the-Group-and-their-Ransomware/IOC.txt",
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -177,6 +229,7 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 
 
 

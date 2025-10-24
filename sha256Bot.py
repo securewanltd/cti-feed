@@ -126,7 +126,8 @@ URLS = [
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/sednit/samples.sha256",
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/signsight/samples.sha256",
     "https://raw.githubusercontent.com/eset/malware-ioc/refs/heads/master/spalax/samples.sha256",
-    "https://bazaar.abuse.ch/export/txt/sha256/recent/"
+    "https://bazaar.abuse.ch/export/txt/sha256/recent/",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/A-Technical-Study-of-Malwares-Using-Turkish-Bank-Names-for-Phishing-and-Data-Theft/IOC.txt",
 
 ]
 OUTPUT_UNIQUE = "malware-sha256.txt"
@@ -169,6 +170,7 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 
 
 

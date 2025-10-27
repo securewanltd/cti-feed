@@ -164,6 +164,10 @@ URLS = [
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Anatomy-of-a-Sidecopy-Attack-From-RAR-Exploits-to-AllaKore-RAT/IOCs.txt",
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Konni-APT-Chronicle-Tracing-Their-Intelligence-Driven-Attack-Chain/IOCs.txt",
     "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/The-Rise-of-Dark-Power-A-Close-Look-at-the-Group-and-their-Ransomware/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Ransomhub/Betruger/IOC/SHA256.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Reverse-Engineering-RokRAT-A-Closer-Look-at-APT37's-Onedrive-Based-Attack-Vector/IOC.txt",
+    "https://raw.githubusercontent.com/ThreatMon/ThreatMon-Reports-IOC/refs/heads/main/Serpent-Stealer-Unmasked-Threat-Analysis-and-Countermeasures/IOCs.txt",
+    
     
     
     
@@ -229,6 +233,7 @@ def collect_and_save_unique(urls, out_file):
 
 if __name__ == "__main__":
     collect_and_save_unique(URLS, OUTPUT_UNIQUE)
+
 
 
 

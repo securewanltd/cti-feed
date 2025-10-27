@@ -181,8 +181,8 @@ def save_ips(ips: set, base_filename: str, chunk_size: int = 130000):
             end = start + chunk_size
             part_ips = ips_sorted[start:end]
 
-            # "black-list-level2.txt" → "black-list" → "black"
-            filename = f"{base_filename.rsplit('.',2)[0]}-part{i+1}.txt"
+            # "black-list-level1.txt" → "black-list" → "black"
+            filename = f"{base_filename.rsplit('.',1)[0]}-part{i+1}.txt"
             filenames.append(filename)
 
             with open(filename, "w", encoding="utf-8") as f:
@@ -235,6 +235,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

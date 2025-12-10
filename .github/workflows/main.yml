@@ -3,7 +3,7 @@ name: Auto Update Blacklist
 # Her saat çalıştır ve manuel tetikleme
 on:
   schedule:
-    - cron: "*/15  * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 jobs:

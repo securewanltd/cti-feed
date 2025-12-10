@@ -1,9 +1,9 @@
 name: Auto Update Blacklist
 
-# Her saat çalıştır ve manuel tetikleme
+# Her 15 dakikada çalıştır ve manuel tetikleme[citation:3]
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/15 * * * *"  # Her 15 dakikada bir
   workflow_dispatch:
 
 jobs:
@@ -28,13 +28,11 @@ jobs:
         run: |
           pip install requests tqdm
 
-    # Her iki script'i sırayla çalıştır
-      - name: Run Python scripts
+      # Her iki script'i sırayla çalıştır
+      - name: Run update_blacklist.py
         run: python update_blacklist.py
-      - name: Run Python scripts
+      - name: Run sha256Bot.py
         run: python sha256Bot.py
-
-        
 
       # Değişiklikleri commit ve push et (pull ile rebase eklenmiş)
       - name: Commit and push changes

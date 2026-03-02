@@ -49,6 +49,7 @@ URLS = [
     "https://raw.githubusercontent.com/romainmarcoux/malicious-outgoing-ip/refs/heads/main/sources/urlhaus.abuse.ch-aa.txt",
     "https://raw.githubusercontent.com/romainmarcoux/malicious-outgoing-ip/refs/heads/main/sources/ut1-fr-aa.txt",
     "https://raw.githubusercontent.com/romainmarcoux/malicious-outgoing-ip/refs/heads/main/sources/viriback.com-aa.txt",
+    "https://raw.githubusercontent.com/okinjp/tor_ips/refs/heads/main/tor-ips_v4.txt",
 ]
 
 OUTPUT_FILE = "black-list.txt"
@@ -174,6 +175,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

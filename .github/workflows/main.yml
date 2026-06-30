@@ -1,29 +1,34 @@
 name: Auto Update Blacklist
 
+# Her 15 dakikada çalıştır ve manuel tetikleme[citation:3]
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/15 * * * *"  # Her 15 dakikada bir
   workflow_dispatch:
 
 jobs:
   update:
-    runs-on: ubuntu-latest        # ← windows-latest yerine
+    runs-on: windows-latest
     permissions:
-      contents: write
+      contents: write  # push izni
 
     steps:
+      # Repo’yu klonla
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Python kur
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # Gerekli kütüphaneleri yükle
       - name: Install dependencies
         run: |
           pip install requests tqdm
 
+      # Bütün script'leri sırayla çalıştır
       - name: Run update_blacklist.py
         run: python update_blacklist.py
       - name: Run sha256Bot.py
@@ -31,6 +36,7 @@ jobs:
       - name: Run asn_blk_list_builder.py
         run: python asn_blk_list_builder.py
 
+      # Değişiklikleri commit ve push et (pull ile rebase eklenmiş)
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"

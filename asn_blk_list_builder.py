@@ -1,5 +1,12 @@
 import requests
 import os
+import sys
+import io
+
+# Windows cp1252 encoding sorununu çözer
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 # İstediğiniz ASN numaralarını bu listeye ekleyebilirsiniz.
 asn_list = ["AS206264", "AS51852", "AS4134", "AS4837", "AS43624", "AS14956", "AS41853",

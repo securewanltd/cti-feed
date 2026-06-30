@@ -28,11 +28,13 @@ jobs:
         run: |
           pip install requests tqdm
 
-      # Her iki script'i sırayla çalıştır
+      # Bütün script'leri sırayla çalıştır
       - name: Run update_blacklist.py
         run: python update_blacklist.py
       - name: Run sha256Bot.py
         run: python sha256Bot.py
+      - name: Run asn_blk_list_builder.py
+        run: python asn_blk_list_builder.py
 
       # Değişiklikleri commit ve push et (pull ile rebase eklenmiş)
       - name: Commit and push changes

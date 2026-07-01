@@ -8,6 +8,14 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
+# Dosyalarin kaydedilecegi klasorun adi
+OUTPUT_DIR = "ASN_BLACKLIST"
+
+# Eger klasor yoksa otomatik olarak olustur
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+    print(f"📁 '{OUTPUT_DIR}' klasoru olusturuldu.")
+
 # Istediginiz ASN numaralarini bu listeye ekleyebilirsiniz.
 asn_list = ["AS206264", "AS51852", "AS4134", "AS4837", "AS43624", "AS14956", "AS41853",
             "AS210083", "AS197695", "AS214996", "AS16276", "AS14061", "AS20473", "AS9009",
@@ -21,7 +29,9 @@ asn_list = ["AS206264", "AS51852", "AS4134", "AS4837", "AS43624", "AS14956", "AS
 
 def download_asn_list(asn):
     url = f"https://asn.ipinfo.app/api/text/list/{asn}"
-    filename = f"{asn}.txt"
+    
+    # Dosya yolunu 'ASN_BLACKLIST/ASXXXX.txt' olacak sekilde ayarladik
+    filename = os.path.join(OUTPUT_DIR, f"{asn}.txt")
 
     print(f"[{asn}] kontrol ediliyor...")
 
@@ -34,11 +44,11 @@ def download_asn_list(asn):
 
             # 1. KONTROL: Dosya zaten var mi ve icerigi yeni gelen veriyle BIREBIR ayni mi?
             if os.path.exists(filename):
-                with open(filename, "r") as file:
+                with open(filename, "r", encoding="utf-8") as file:
                     old_content = file.read().strip()
 
                 if new_content == old_content:
-                    print(f" ➖ Atlandi: {filename} zaten en guncel halinde.")
+                    print(f" ➖ Atlandi: {asn}.txt zaten en guncel halinde.")
                     return  # Ayniysa burada fonksiyonu durdur, diske yazma islemi yapma.
                 else:
                     action_msg = "Guncellendi"  # Dosya var ama icerik degismis
@@ -46,7 +56,7 @@ def download_asn_list(asn):
                 action_msg = "Yeni Indirildi"  # Dosya hic yokmus, ilk kez iniyor
 
             # 2. KAYIT: Eger buraya kadar geldiyse dosya ya yoktur ya da guncellenmistir, yazdiriyoruz.
-            with open(filename, "w") as file:
+            with open(filename, "w", encoding="utf-8") as file:
                 file.write(new_content)
 
             # Bilgi amacli icindeki IP sayisini bulalim
@@ -68,4 +78,4 @@ for asn in set(asn_list):
     download_asn_list(asn)
 
 print("=" * 55)
-print("Islem Tamamlandi! ASN listeleri basariyla senkronize edildi.")
+print(f"Islem Tamamlandi! Butun txt dosyalari '{OUTPUT_DIR}' klasorunun icine kaydedildi.")

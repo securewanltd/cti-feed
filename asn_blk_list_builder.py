@@ -126,4 +126,4 @@ for asn in set(asn_list):
 create_combined_lists()
 
 print("=" * 55)
-print("Islem Tamamlandi! Butun dosyalar hazir.")glo
+print("Islem Tamamlandi! Butun dosyalar hazir.")

@@ -1,13 +1,13 @@
-import requests
+import glob
+import io
 import os
 import sys
-import io
-import glob
+import requests
 
 # Windows cp1252 encoding sorununu cozer
 if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
 
 # Dosyalarin kaydedilecegi klasorun adi
 OUTPUT_DIR = "ASN_BLACKLIST"
@@ -32,7 +32,7 @@ asn_list = [
 
 def download_asn_list(asn):
     url = f"https://asn.ipinfo.app/api/text/list/{asn}"
-    
+
     # Dosya yolunu 'ASN_BLACKLIST/ASXXXX.txt' olacak sekilde ayarladik
     filename = os.path.join(OUTPUT_DIR, f"{asn}.txt")
 
@@ -50,16 +50,16 @@ def download_asn_list(asn):
 
                 if new_content == old_content:
                     print(f" ➖ Atlandi: {asn}.txt zaten en guncel halinde.")
-                    return  
+                    return
                 else:
-                    action_msg = "Guncellendi"  
+                    action_msg = "Guncellendi"
             else:
-                action_msg = "Yeni Indirildi"  
+                action_msg = "Yeni Indirildi"
 
             with open(filename, "w", encoding="utf-8") as file:
                 file.write(new_content)
 
-            line_count = len([line for line in new_content.split('\n') if line])
+            line_count = len([line for line in new_content.split("\n") if line])
             print(f" ✓ {action_msg}! ({line_count} prefix -> {filename})")
 
         else:

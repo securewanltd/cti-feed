@@ -208,7 +208,7 @@ def fetch_url_text(url):
         r.raise_for_status()
         return r.text
     except Exception as e:
-        print(f"[!] İndirme hatası: {url} -> {e}")
+        print(f"[!] Indirme hatası: {url} -> {e}")
         return None
 
 def extract_sha256(text):
